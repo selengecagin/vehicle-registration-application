@@ -20,21 +20,26 @@ namespace vehicle_registration_app.Repositories
 
         public void Add(Brand brand)
         {
-            _context.Brands.Add(brand);
-            _context.SaveChanges();
+            _context?.Brands?.Add(brand);
+            _context?.SaveChanges();
         }
 
         public void Update(Brand brand)
         {
-            _context.Entry(brand).State = EntityState.Modified;
-            _context.SaveChanges();
+            var entry = _context?.Entry(brand);
+            if (entry != null)
+            {
+                entry.State = EntityState.Modified;
+                _context?.SaveChanges();
+            }
         }
 
         public void Delete(int id)
         {
-            var brand = _context.Brands.Find(id);
-            _context.Brands.Remove(brand);
-            _context.SaveChanges();
+            var brand = _context?.Brands?.Find(id);
+            _context?.Brands?.Remove(brand ?? throw new Exception("Brand not found."));
+            _context?.SaveChanges();
         }
 
     }
+}
