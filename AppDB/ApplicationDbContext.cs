@@ -12,8 +12,8 @@ namespace vehicle_registration_app.AppDB
         {
         }
 
-        public DbSet<Brand> Brands { get; set; }
-        public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Brand>? Brands { get; set; }
+        public DbSet<Vehicle>? Vehicles { get; set; }
     }
 
 }
