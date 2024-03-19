@@ -10,12 +10,12 @@ namespace vehicle_registration_app.Repositories
 
         public IEnumerable<Brand> GetAll()
         {
-            return _context.Brands.ToList();
+            return _context?.Brands?.ToList() ?? new List<Brand>();
         }
 
         public Brand GetById(int id)
         {
-            return _context.Brands.Find(id);
+            return _context?.Brands?.Find(id) ?? throw new Exception("Brands collection or context is null.");
         }
 
         public void Add(Brand brand)
