@@ -1,0 +1,14 @@
+﻿@model Brand
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Name:</label>
+        <input asp-for="Name" />
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+</form>

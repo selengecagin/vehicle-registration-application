@@ -1,0 +1,36 @@
+﻿@model Vehicle
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div>
+        <label>Car Plate:</label>
+        <input asp-for="CarPlate" />
+    </div>
+    <div>
+        <label>Km:</label>
+        <input asp-for="Km" />
+    </div>
+    <div>
+        <label>Model:</label>
+        <input asp-for="Model" />
+    </div>
+    <div>
+        <label>Color:</label>
+        <input asp-for="Color" />
+    </div>
+    <div>
+        <label>Gear Type:</label>
+        <input asp-for="GearType" />
+    </div>
+    <div>
+        <label>Brand:</label>
+        <select asp-for="BrandId" asp-items="@(new SelectList(ViewBag.Brands, "Id", "Name"))">
+            <option value="">-- Select Brand --</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Save" />
+    </div>
+</form>
