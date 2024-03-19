@@ -18,7 +18,7 @@
         <dt>Gear Type:</dt>
         <dd>@Model.GearType</dd>
         <dt>Brand:</dt>
-        <dd>@Model.Brand.Name</dd>
+        <dd>@Model?.Brand?.Name</dd>
     </dl>
 
     <form asp-action="Delete">

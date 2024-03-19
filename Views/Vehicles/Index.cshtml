@@ -25,7 +25,7 @@
             <td>@item.Model</td>
             <td>@item.Color</td>
             <td>@item.GearType</td>
-            <td>@item.Brand.Name</td>
+            <td>@item?.Brand?.Name</td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
