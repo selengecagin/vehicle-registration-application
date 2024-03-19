@@ -10,14 +10,7 @@ namespace vehicle_registration_app.Repositories
 
         public IEnumerable<Vehicle> GetAll()
         {
-            if (_context != null && _context.Vehicles != null)
-            {
-                return _context.Vehicles.Include(v => v.Brand).ToList();
-            }
-            else
-            {
-                throw new Exception("Context or Vehicles collection is null.");
-            }
+            return _context?.Vehicles?.Include(v => v.Brand).ToList() ?? Enumerable.Empty<Vehicle>();
         }
     }
 }
