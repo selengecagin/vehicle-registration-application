@@ -12,5 +12,13 @@ namespace vehicle_registration_app.Repositories
         {
             return _context?.Vehicles?.Include(v => v.Brand).ToList() ?? Enumerable.Empty<Vehicle>();
         }
+
+        public Vehicle GetById(int id)
+        {
+            return _context?.Vehicles?.Include(v => v.Brand).FirstOrDefault(v => v.Id == id)
+                   ?? throw new Exception("Vehicle not found.");
+        }
+
+
     }
 }
